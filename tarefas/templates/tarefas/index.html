@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarefas</title>
+</head>
+<body>
+
+
+    <h1>Tabela de Tarefas do {{ nome }}</h1>
+
+    <table border="1px" >
+        <tr>
+            <th>Prioridade</th>
+            <th>Tarefa</th>
+            <th>Apagar</th>
+        </tr>
+        {% for tarefa in tarefas %}
+        <tr>
+            <td>{{ tarefa.prioridade }}</td>
+            <td> {{ tarefa.nome }}</td>
+            <td><a href="{% url 'apagar' tarefa.id %}">Apagar</a>  </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{% url 'form' %}">Adicionar tarefa</a>
+
+
+
+
+</body>
+</html>
